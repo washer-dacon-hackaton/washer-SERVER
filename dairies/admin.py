@@ -3,7 +3,7 @@ from .models import Dairy,DairyKeyword,Question
 
 @admin.register(Dairy)
 class DairyAdmin(admin.ModelAdmin):
-    list_display=['dairy_id','user','dairy_feedback','created_at']
+    list_display=['dairy_id','user','created_at']
 
 @admin.register(DairyKeyword)
 class DairyKeywordAdmin(admin.ModelAdmin):
@@ -11,4 +11,4 @@ class DairyKeywordAdmin(admin.ModelAdmin):
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display=['question_id','dairy','weather','self_praise','special_joy','highlight']
+    list_display=['question_id','dairy','weather','self_praise','special_joy','highlight','dairy_feedback']
