@@ -12,4 +12,12 @@ class Dairy(models.Model):
 class DairyKeyword(models.Model):
     dairykeyword_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     dairy = models.ForeignKey(Dairy, verbose_name='감정일기', on_delete=models.CASCADE, related_name='keywords')
-    keyword = models.CharField(verbose_name='감정키워드', max_length=50)
+    keyword = models.CharField(verbose_name='감정키워드', max_length=255)
+
+class Question(models.Model):
+    question_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    dairy = models.OneToOneField(Dairy, on_delete=models.CASCADE, related_name='question')
+    weather = models.TextField(verbose_name='날씨 질문')
+    self_praise = models.TextField(verbose_name='자기 칭찬')
+    special_joy = models.TextField(verbose_name='특별 순간')
+    highlight = models.TextField(verbose_name='하이라이트')
