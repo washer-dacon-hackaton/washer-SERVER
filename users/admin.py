@@ -9,3 +9,6 @@ from .models import User
 '''
 
 admin.site.register(User)
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display=['user_id','created_at','name','nationality','email','nickname']
