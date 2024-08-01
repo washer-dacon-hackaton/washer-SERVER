@@ -1,8 +1,8 @@
 #pip install openai==0.28
 
 import openai
-
-openai.api_key = 'sk-proj-6Oo49M8kYFYwXAW2NXr0T3BlbkFJbTs7i42hDcvOWVBAduqn'
+from my_settings import OPENAI_KEY
+openai.api_key = OPENAI_KEY
 def ai_feedback(text):
 
 #text='title: 나 오늘 혼자 산책하다가\n content : 노래들으려고 보니까 에어팟 충전 만땅이어서 기분 좋음'

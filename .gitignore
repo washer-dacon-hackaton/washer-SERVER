@@ -9,3 +9,6 @@ __pycache__/
 *.db
 *.sqlite3
 
+washer-server-api-keypair.pem
+washer-server-keypair.pem
+my_settings.py

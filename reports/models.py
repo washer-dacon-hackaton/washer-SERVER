@@ -18,12 +18,12 @@ class Wordcloud(models.Model):
 class Hexagonal(models.Model):
     hexagonal_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     monthly_report = models.OneToOneField(MonthlyReport, on_delete=models.CASCADE, related_name='hexagonal')
-    emo1 = models.IntegerField()
-    emo2 = models.IntegerField()
-    emo3 = models.IntegerField()
-    emo4 = models.IntegerField()
-    emo5 = models.IntegerField()
-    emo6 = models.IntegerField()
+    sadness = models.IntegerField(verbose_name='슬픔',default=0)
+    love = models.IntegerField(verbose_name='사랑',default=0)
+    anger = models.IntegerField(verbose_name='분노',default=0)
+    joy = models.IntegerField(verbose_name='기쁨',default=0)
+    gratitude = models.IntegerField(verbose_name='감사',default=0)
+    fear = models.IntegerField(verbose_name='공포',default=0)
 
 class HappyGraph(models.Model):
     happygraph_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
